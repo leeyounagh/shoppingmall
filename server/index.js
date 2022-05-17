@@ -8,7 +8,6 @@ const cookieParser =require('cookie-parser')
 const {User} =require('./models/User');
 const {auth} =require('./middleware/auth')
 const config = require("./config/key");
-const { userInfo } = require('os');
 
 app.use('/static', express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -89,7 +88,9 @@ app.post('/api/users/login', (req, res) => {
       name: req.user.name,
       lastname: req.user.lastname,
       role: req.user.role,
-      image: req.user.image
+      image: req.user.image,
+      cart:req.user.cart,
+      history:req.user.history
     })
   })
 

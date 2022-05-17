@@ -127,7 +127,7 @@ router.get('/products_by_id', (req, res) => {
 
     //productId를 이용해서 DB에서  productId와 같은 상품의 정보를 가져온다.
 
-    Product.find({ _id: { $in: productIds } })
+    Product.find({ _id: { $in: productIds } }) //	배열 안의 값을 비교하여 동일한 값을 찾는 연산자
         .populate('writer')
         .exec((err, product) => {
             if (err) return res.status(400).send(err)

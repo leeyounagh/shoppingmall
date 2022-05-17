@@ -8,6 +8,7 @@ import auth from './hoc/auth';
 import NavBar from './components/NavBar/NavBar';
 import UploadProductPage from './components/UPloadProductPage/UploadProductPage';
 import DetailProduct from './components/DetailProductPage/DetailProduct';
+import CartPage from './components/CartPage/CartPage'
 function App() {
  
   return (
@@ -30,7 +31,8 @@ function App() {
 
          <Route exact path='/product/upload' element={auth(UploadProductPage,true)}></Route>
          <Route exact path='/product/:productId' element={auth(DetailProduct,null)}></Route>
-
+         <Route exact path='/user/cart' element={auth(CartPage,true)}></Route>
+ 
           
          
         </Routes>
