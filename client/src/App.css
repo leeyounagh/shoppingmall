@@ -1,0 +1,15 @@
+.uploadTitle{
+    position: relative;
+    top:150px;
+    textAlign:center;
+    marginBottom:2rem;
+}
+
+.MainPosition{
+    position:relative;
+    top:150px;
+}
+.detailPosition{
+    position: relative;
+    top:150px;
+}
