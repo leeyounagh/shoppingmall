@@ -1,13 +1,15 @@
 import axios from 'axios';
 
 
+
 import {
     LOGIN_USER,
     REGISTER_USER,
     AUTH_USER,
     LOGOUT_USER,
     ADD_TO_CART,
-    GET_CART_ITEMS
+    GET_CART_ITEMS,
+    REMOVE_CART_ITEM
 } from './types';
 export function loginUser(dataToSubmit) {
 
@@ -88,4 +90,26 @@ export function addtoCart(id){
         type: GET_CART_ITEMS,
         payload: request
     }
+}
+
+export function removeCartItem(productId) {
+  
+    const request = axios.get(`/api/users/removeFromCart?id=${productId}`)
+    .then(response => {
+        //productInfo ,  cart 정보를 조합해서   CartDetail을 만든다. 
+        response.data.cart.forEach(item => {
+            response.data.productInfo.forEach((product, index) => {
+                if (item.id === product._id) {
+                    response.data.productInfo[index].quantity = item.quantity
+                }
+
+            })
+        })
+        return response.data;
+    });
+
+return {
+    type: REMOVE_CART_ITEM,
+    payload: request
+}
 }
