@@ -9,7 +9,9 @@ const {User} =require('./models/User');
 const {auth} =require('./middleware/auth')
 const config = require("./config/key");
 const { Product } = require('./models/product');
-
+const {Payment} =require('./models/Payment');
+const async =require('async');
+const { reset } = require('nodemon');
 app.use('/static', express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -186,6 +188,87 @@ app.get('/api/users/removeFromCart',auth,(req,res)=>{
     }
 )
   // product 콜렉션에서 남아있는 상품들의 정보를 가져오기
+})
+
+app.post('/api/users/successBuy',auth,(req,res)=>{
+
+      //1. User Collection 안에  History 필드 안에  간단한 결제 정보 넣어주기
+      let history = [];
+      let transactionData = {};
+  
+      req.body.cartDetail.forEach((item) => {
+          history.push({
+              dateOfPurchase: Date.now(),
+              name: item.title,
+              id: item._id,
+              price: item.price,
+              quantity: item.quantity,
+              paymentId: req.body.paymentData.paymentID
+          })
+      })
+  
+      //2. Payment Collection 안에  자세한 결제 정보들 넣어주기 
+      transactionData.user = {
+          id: req.user._id,
+          name: req.user.name,
+          email: req.user.email
+      }
+  
+      transactionData.data = req.body.paymentData
+      transactionData.product = history
+  
+      //history 정보 저장 
+      User.findOneAndUpdate(
+          { _id: req.user._id },
+          { $push: { history: history }, $set: { cart: [] } },
+          { new: true },
+          (err, user) => {
+              if (err) return res.json({ success: false, err })
+  
+  
+              //payment에다가  transactionData정보 저장 
+              const payment = new Payment(transactionData)
+              payment.save((err, doc) => {
+                  if (err) return res.json({ success: false, err })
+  
+  
+                  //3. Product Collection 안에 있는 sold 필드 정보 업데이트 시켜주기 
+  
+  
+                  //상품 당 몇개의 quantity를 샀는지 
+  
+                  let products = [];
+                  doc.product.forEach(item => {
+                      products.push({ id: item.id, quantity: item.quantity })
+                  })
+  
+  
+                  async.eachSeries(products, (item, callback) => {
+  
+                      Product.update(
+                          { _id: item.id },
+                          {
+                              $inc: {
+                                  "sold": item.quantity
+                              }
+                          },
+                          { new: false },
+                          callback
+                      )
+                  }, (err) => {
+                      if (err) return res.status(400).json({ success: false, err })
+                      res.status(200).json({
+                          success: true,
+                          cart: user.cart,
+                          cartDetail: []
+                      })
+                  }
+                  )
+              })
+          }
+      )
+ 
+ 
 })
   
   app.listen(port, () => console.log(`Example app listening on port ${port}!`))

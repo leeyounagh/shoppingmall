@@ -7,7 +7,8 @@ import {
     LOGOUT_USER,
     ADD_TO_CART,
     GET_CART_ITEMS ,
-    REMOVE_CART_ITEM
+    REMOVE_CART_ITEM,
+    ON_SUCCESS_BUY
 } from '../_actions/types';
 
 export default function (state = {}, action) {
@@ -24,7 +25,7 @@ export default function (state = {}, action) {
                 
                 case LOGOUT_USER:
                     return {...state ,logoutsuccess:action.payload}
-                    case LOGOUT_USER:
+                 case ADD_TO_CART:
                     return {...state,
                     userData:{
                         ...state.userData,
@@ -39,7 +40,17 @@ export default function (state = {}, action) {
                                 ...state.userData,
                                 cart:action.payload.cart
                             }
+                            
                         }
+
+                        case ON_SUCCESS_BUY :
+                            return{
+                                ...state,cartDetail:action.payload.cartDetail,
+                                userData:{
+                                    ...state.userData,cart:action.payload.cart
+                                }
+                                
+                            }
               
         default:
             return state;

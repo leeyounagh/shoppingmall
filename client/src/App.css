@@ -18,4 +18,9 @@
     top:150px;
     display: flex;
     justify-content: center;
+    
+}
+.EmptyPosition{
+    position: relative;
+    top:150px;
 }
