@@ -22,7 +22,7 @@ const RadioBox = (props) => {
     return (
         <div>
               <Collapse accordion>
-                <Panel  header="This is panel header 1" key="1">
+                <Panel  header="가격 정렬" key="1">
                
                 <Radio.Group onChange={handleChange} value={Value}>
                         {renderRadioBox()}

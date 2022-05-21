@@ -14,10 +14,8 @@ const NavBar = () => {
         setVisible(false)
       };
     return (
-        <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' ,top:'0px'}}>
-      <div className="menu__logo">
-        <a href="/">Logo</a>
-      </div>
+        <nav className="menu " style={{ position: 'fixed', top:'0px',zIndex: 5, width: '100%' }}>
+   
       <div className="menu__container">
         <div className="menu_left">
           <LeftMenu mode="horizontal" />

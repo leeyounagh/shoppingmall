@@ -4,8 +4,10 @@ import { Badge, Avatar,Menu  } from 'antd';
 import {  useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import {ShoppingCartOutlined} from '@ant-design/icons'
+import MainPage from '../../LandingPage/MainPage'
 
 import axios from 'axios'
+
 
 
 const RightMenu = (props) => {
@@ -32,6 +34,9 @@ const RightMenu = (props) => {
           <Menu.Item key="app">
             <a href="/register">Signup</a>
           </Menu.Item>
+          <Menu.Item key="main">
+            <a href="/main">Products</a>
+          </Menu.Item>
         </Menu>
          
          
@@ -42,14 +47,18 @@ const RightMenu = (props) => {
           
           <Menu mode={props.mode}>
         <Menu.Item key="history">
+        
           <a href="/history">History</a>
         </Menu.Item>
+        <Menu.Item key="main">
+            <a href="/main">Products</a>
+          </Menu.Item>
 
         <Menu.Item key="upload">
           <a href="/product/upload">Upload</a>
         </Menu.Item>
 
-        <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
+        <Menu.Item key="cart" style={{  position:'relative',top:'10px',paddingBottom: 3 }}>
           <Badge count={user.userData && user.userData.cart.length}>
             <a href="/user/cart" className="head-example" style={{ marginRight: -22, color: '#667777' }} >
               

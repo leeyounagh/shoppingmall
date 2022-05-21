@@ -10,6 +10,7 @@ import UploadProductPage from './components/UPloadProductPage/UploadProductPage'
 import DetailProduct from './components/DetailProductPage/DetailProduct';
 import CartPage from './components/CartPage/CartPage'
 import HistoryPage from './components/HistoryPage/HistoryPage';
+import MainPage from './components/LandingPage/MainPage'
 function App() {
  
   return (
@@ -23,6 +24,7 @@ function App() {
        <Routes>
    
          <Route exact path ="/" element={auth(LandingPage,null)}/>
+         <Route exact path ="/main" element={auth(MainPage,null)}/>
          
          
           <Route exact path='/register/' element={auth(RegisterPage,false)}>
