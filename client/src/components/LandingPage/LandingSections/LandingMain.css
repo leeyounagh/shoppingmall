@@ -1,0 +1,27 @@
+@keyframes fadeIn {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@keyframes box-ani { from { transform: translate(0, 0); } to { transform: translate(0px, 20px); } }
+@keyframes box-ani2 { from { transform: translate(0, 0); } to { transform: translate(0px, -150px); } }
+
+
+.fade-in{
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    
+}
+.LandingMain_Translate1{
+    animation-name: box-ani;
+    animation-duration: 5s;
+
+}
+.LandingMain_Translate2{
+    animation-name: box-ani2;
+    animation-duration: 5s;
+
+}

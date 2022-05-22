@@ -1,3 +1,4 @@
+
 .uploadTitle{
     position: relative;
     top:150px;
@@ -26,4 +27,7 @@
 }
 .Mainpanel-margin{
     margin-top: 30px;
+}
+body{
+    background:#9F814F
 }

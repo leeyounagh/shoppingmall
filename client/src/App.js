@@ -10,17 +10,28 @@ import UploadProductPage from './components/UPloadProductPage/UploadProductPage'
 import DetailProduct from './components/DetailProductPage/DetailProduct';
 import CartPage from './components/CartPage/CartPage'
 import HistoryPage from './components/HistoryPage/HistoryPage';
-import MainPage from './components/LandingPage/MainPage'
+import MainPage from './components/LandingPage/MainPage';
+import styled from "styled-components";
+
+
+styled.body`
+ background-color:"#9F814F"
+
+`;
+
 function App() {
- 
+
+  
+
+
   return (
-    <div className="App">
+    <div className="App" >
    
     
         
 
       <NavBar></NavBar>
-       
+     
        <Routes>
    
          <Route exact path ="/" element={auth(LandingPage,null)}/>
