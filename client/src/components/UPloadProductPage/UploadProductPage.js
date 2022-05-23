@@ -4,18 +4,19 @@ import { Typography,Button,Form,Input } from 'antd';
 import FileUpload from '../utils/FileUpload';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import {PlusOutlined} from '@ant-design/icons'
+import './Upload.css'
 const {Title} = Typography;
 const {TextArea} =Input;
 
 const Continents = [
-    {key:1,value:"아프리카"},
-    {key:2,value:"유럽"},
-    {key:3,value:"일본"},
-    {key:4,value:"한국"},
-    {key:5,value:"중국"},
-    {key:6,value:"미국"},
-    {key:7,value:"동남아"},
+    {key:1,value:"상의"},
+    {key:2,value:"하의"},
+    {key:3,value:"원피스"},
+    {key:4,value:"악세서리"},
+    {key:5,value:"소품"},
+    {key:6,value:"etc..."}
+   
 ]
 const UploadProductPage = (props) => {
     const [title,setTitle] = useState('')
@@ -76,29 +77,37 @@ const UploadProductPage = (props) => {
             })
     }
     return (
-           <Fragment>
+           <div style={{background:'#E2C2C6',width:'100%',height:'100%',background:'#E2C2C6',
+           position:'fixed'}}>
       
                    {/* <Title className="uploadTitle"level={2}>여행상품 업로드</Title> */}
            
 
            <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto'}}
             onSubmitCapture={submitHandler}>
-             <FileUpload refreshFunction={updateImages}></FileUpload>
+                <div style={{position:'absolute',top:'-50px',left:'270px',fontSize:'25px',
+             color:'#6D184B' }}>상품 업로드</div>
+              <div style={{position:'absolute',top:'80px',left:'120px',fontSize: '50px',color:'#b9929f',
+               color:'#6D184B'}}> <PlusOutlined /></div> 
+             <FileUpload style={{color:'#b9929f'}}  refreshFunction={updateImages}></FileUpload>
+             
                <br>
                </br>
-               <label>이름</label>
-               <Input onChange={titleChangeHandler} value={title}></Input>
+               <label style={{color:'#6D184B'}}>이름</label>
+               <input style={{marginLeft:'10px' ,width: '600px',color:'#6D184B'}}onChange={titleChangeHandler} value={title} ></input>
                <br>
                </br>
-               <label>설명</label>
-               <TextArea onChange={descriptionChangeHandler} value={Descriptoion}>  </TextArea>
+               <label style={{ marginTop:"20px",color:'#6D184B'}}>설명</label>
+               <textarea style={{width:'700px',height:'80px',backgroundColor:"#b9929f",
+                border:"none",color:'#6D184B'}}onChange={descriptionChangeHandler} value={Descriptoion}>  </textarea>
                <br>
                </br>
-               <label>가격($)</label>
-               <Input type="number" onChange={priceChangeHandler} value={Price}></Input>
+               <label style={{color:'#6D184B'}}>가격($)</label>
+               <input  style={{marginLeft:'10px',width:'100px',color:'#6D184B'} }type="number" onChange={priceChangeHandler} value={Price}></input>
                <br>
                </br>
-               <select onChange={ContinetChangeHandler} value={continent}>
+               <select  style={{marginTop:'10px',marginBottom:'10px',backgroundColor:"#b9929f",
+                  border:'none',color:'#6D184B'}}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
                         <option key ={item.key} value={item.key}>{item.value}</option>
@@ -109,12 +118,13 @@ const UploadProductPage = (props) => {
                </select>
                <br>
                </br>
-               <Button htmlType='submit'  >
+               <Button className="confirmstyle button btnPush btnPurple"style={{backgroundColor:"#b9929f",
+                  border:'none',color:"#6D184B"}} htmlType='submit'  >
                    확인
                </Button>
 
            </Form >
-           </Fragment>
+           </div>
     );
 };
 

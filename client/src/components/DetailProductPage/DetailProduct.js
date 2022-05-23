@@ -20,7 +20,7 @@ const DetailProduct = (props) => {
     }, [])
 
     return (
-        <div className="detailPosition" style={{sidth:'100%',padding:'3rem 4rem'}}>
+        <div className="detailPosition" style={{sidth:'100%',padding:'3rem 4rem',background:'#E2C2C6'}}>
             <div style={{display:'flex',justifyContent:'center'}}>
                 <h1>{Product.title}</h1>
             </div>

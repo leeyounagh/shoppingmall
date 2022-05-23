@@ -62,32 +62,39 @@ const CartPage = (props) => {
               })
     }
     return (
-        <>
-        <div className="UserCartPosition"style={{margin:'3rem auto'}}>
+        <div >
+   <div className="UserCartPosition"style={{margin:'3rem auto' }}>
            
 
-            <UserCardBlock
-            products={props.user.cartDetail} removeItem={removeFromCart}></UserCardBlock>
+           <UserCardBlock
+           products={props.user.cartDetail} removeItem={removeFromCart}></UserCardBlock>
+         
           
-           
+       </div>
+      
+       <>
+        {ShowTotal? <div style={{marginTop:'3rem'}}>
+         <h2>Total Amount: ${Total}</h2>
+      </div>:showSuccess?
+       <Result
+       status="success"
+       title="Successfully Purchased Items" />:
+      <div className="EmptyPosition"style={{marginTop:'3rem'}}><Empty description={false}/></div>}
+       </>
+       {ShowTotal&&
+       <div style={{position:'relative',top:'80%'}}>
+            <Paypal
+        
+        total={Total}
+         onSuccess ={transectionSuccess}></Paypal>
+       </div>
+       
+       }
         </div>
+        
        
-        <>
-         {ShowTotal? <div style={{marginTop:'3rem'}}>
-          <h2>Total Amount: ${Total}</h2>
-       </div>:showSuccess?
-        <Result
-        status="success"
-        title="Successfully Purchased Items" />:
-       <div className="EmptyPosition"style={{marginTop:'3rem'}}><Empty description={false}/></div>}
-        </>
-        {ShowTotal&&
-         <Paypal
-         total={Total}
-          onSuccess ={transectionSuccess}></Paypal>
-        }
        
-        </>
+        
     );
 };
 

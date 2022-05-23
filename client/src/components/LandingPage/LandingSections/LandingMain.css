@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Water+Brush&display=swap');
 @keyframes fadeIn {
 	from {
 		opacity:0;
@@ -7,13 +9,31 @@
 	}
 }
 @keyframes box-ani { from { transform: translate(0, 0); } to { transform: translate(0px, 20px); } }
-@keyframes box-ani2 { from { transform: translate(0, 0); } to { transform: translate(0px, -150px); } }
+@keyframes box-ani2 { from { transform: translate(0, 0); } to { transform: translate(0px, -80px); } }
+@keyframes box-ani3 { from { transform: translate(0, 0); } to { transform: translate(0px, -300px); } }
+@keyframes box-ani4 { from { transform: translate(0, 0); } to { transform: translate(0px, -180px); } }
+@keyframes box-ani5 { from { transform: translate(0, 0); } to { transform: translate(0px, -50px); } }
+@keyframes box-ani6 { from { transform: translate(0, 0); } to { transform: translate(0px, -45px); } }
+@keyframes text-ani { from { transform: translate(0, -150px); } to { transform: translate(0px, 0px); } }
+@keyframes text-ani2 { from { transform: translate(0, 150px); } to { transform: translate(0px, 0px); } }
+@keyframes scaleY {  From {
+    -webkit-transform: scale(0.5);
+}
+To {
+    -webkit-transform: scale(1.0);
+}
+}
 
 
 .fade-in{
     animation-name: fadeIn;
     animation-duration: 5s;
     
+}
+.LandingMain_Translate6{
+    animation-name: box-ani6;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
 .LandingMain_Translate1{
     animation-name: box-ani;
@@ -23,5 +43,46 @@
 .LandingMain_Translate2{
     animation-name: box-ani2;
     animation-duration: 5s;
-
+    animation-fill-mode: forwards;
 }
+.LandingMain_Translate{
+    animation-name: box-ani3;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+.LandingMain_Translate3{
+    animation-name: box-ani4;
+    animation-duration: 5s;
+}
+.LandingMain_Translate4{
+    animation-name: box-ani4;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+.Landing_Title{
+    font-size:70px;
+    z-index: 50;
+    color: black;
+    font-family: 'Nanum Pen Script', cursive;
+font-family: 'Water Brush', cursive;
+ 
+}
+.title_fade{
+    animation-name: text-ani;
+    animation-duration: 5s;
+}
+.title_fade1{
+    animation-name: text-ani2;
+    animation-duration: 5s;
+}
+.LandingMain_scaleY{
+    animation-name: scaleY;
+    animation-duration: 5s;
+    transition: all 5s ease-in-out;
+}
+/* body { position: fixed; } */
+
+html {
+    scroll-behavior: smooth;
+  }
+  

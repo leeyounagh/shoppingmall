@@ -49,9 +49,13 @@ const FileUpload = (props) => {
      setImages(newImages)
      props.refreshFunction(newImages)
   }
+  const dropzoneStyle = {
+   
+    border : "1px solid black"
+};
     return (
-        <div style ={{display:'flex', justifyContent:'space-between'}}>
-           <Dropzone onDrop={dropHandler}>
+        <div style ={{display:'flex', justifyContent:'space-between',marginTop:"10px"}}>
+           <Dropzone className="dropzone" style={dropzoneStyle} onDrop={dropHandler}>
            {({getRootProps, getInputProps}) => (
           <section>
           <div style={{width:300,height:240,border:'1px solid lightgray'}}{...getRootProps()}>

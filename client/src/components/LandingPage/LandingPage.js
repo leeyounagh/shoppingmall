@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import LandingMain from './LandingSections/LandingMain';
 import Landingmiddle from './LandingSections/Landingmiddle';
 import NewItems from './LandingSections/NewItems'
 
 const LandingPage = () => {
+
+   
     return (
-        <div style={{width:'100%',height:'100%', background:'#9F814F'}}>
-           <div>
+        <div id="scrollbar"style={{width:'100%',height:'100%', background:'#E2C2C6'}}>
+           <div >
            <LandingMain></LandingMain>
            </div>
            
            <div>
            <Landingmiddle></Landingmiddle>
            </div>
-          <div>
+          {/* <div>
           <NewItems></NewItems>
-          </div>
+          </div> */}
             
         </div>
     );
