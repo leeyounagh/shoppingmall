@@ -33,7 +33,7 @@ function App({titlecolor}) {
 
 
   return (
-    <div id = "scrollbar" className="App " style={{background:'#E2C2C6' ,width:'100%',height:'800px'}} >
+    <div id = "scrollbar" className="App " style={{background:'#E2C2C6' ,width:'100%',height:'1000px'}} >
    
     <div className={styles.titlecolor}>
     <NavBar></NavBar>

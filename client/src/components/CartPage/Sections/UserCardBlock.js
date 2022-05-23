@@ -1,5 +1,7 @@
 import React from 'react'
 import "./UserCardBlock.css"
+import Paypal from '../../utils/PayPal'
+
 function UserCardBlock(props) {
 
     const renderCartImage = (images) => {
@@ -14,7 +16,7 @@ function UserCardBlock(props) {
 
     const renderItems = () => (
         props.products && props.products.map((product, index) => (
-            <tr key={index}>
+            <tr key={index} style={{width:'500px'}}>
                 <td>
                     <img style={{ width: '70px' }} alt="product"
                         src={renderCartImage(product.images)} />
@@ -37,7 +39,7 @@ function UserCardBlock(props) {
 
     return (
         <div >
-            <table style={{position:'absolute', top:'200px'}}>
+            <table style={{position:'absolute', top:'200px',left:'0px',marginTop:'80px'}}>
                 <thead>
                     <tr>
                         <th>Product Image</th>
