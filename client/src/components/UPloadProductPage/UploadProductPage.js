@@ -77,8 +77,8 @@ const UploadProductPage = (props) => {
             })
     }
     return (
-           <div style={{background:'#E2C2C6',width:'100%',height:'100%',background:'#E2C2C6',
-           position:'fixed'}}>
+           <div style={{width:'100%',height:'100%'
+         }}>
       
                    {/* <Title className="uploadTitle"level={2}>여행상품 업로드</Title> */}
            
@@ -86,28 +86,28 @@ const UploadProductPage = (props) => {
            <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto'}}
             onSubmitCapture={submitHandler}>
                 <div style={{position:'absolute',top:'-50px',left:'270px',fontSize:'25px',
-             color:'#6D184B' }}>상품 업로드</div>
-              <div style={{position:'absolute',top:'80px',left:'120px',fontSize: '50px',color:'#b9929f',
-               color:'#6D184B'}}> <PlusOutlined /></div> 
+              }}>상품 업로드</div>
+              <div style={{position:'absolute',top:'80px',left:'120px',fontSize: '50px'
+              }}> <PlusOutlined /></div> 
              <FileUpload style={{color:'#b9929f'}}  refreshFunction={updateImages}></FileUpload>
              
                <br>
                </br>
-               <label style={{color:'#6D184B'}}>이름</label>
-               <input style={{marginLeft:'10px' ,width: '600px',color:'#6D184B'}}onChange={titleChangeHandler} value={title} ></input>
+               <label>이름</label>
+               <Input style={{marginLeft:'10px' ,width: '600px'}}onChange={titleChangeHandler} value={title} ></Input>
                <br>
                </br>
-               <label style={{ marginTop:"20px",color:'#6D184B'}}>설명</label>
-               <textarea style={{width:'700px',height:'80px',backgroundColor:"#b9929f",
-                border:"none",color:'#6D184B'}}onChange={descriptionChangeHandler} value={Descriptoion}>  </textarea>
+               <label style={{ marginTop:"20px"}}>설명</label>
+               <TextArea style={{width:'700px',height:'80px',
+               }}onChange={descriptionChangeHandler} value={Descriptoion}>  </TextArea>
                <br>
                </br>
-               <label style={{color:'#6D184B'}}>가격($)</label>
-               <input  style={{marginLeft:'10px',width:'100px',color:'#6D184B'} }type="number" onChange={priceChangeHandler} value={Price}></input>
+               <label >가격($)</label>
+               <Input  style={{marginLeft:'10px',width:'100px'} }type="number" onChange={priceChangeHandler} value={Price}></Input>
                <br>
                </br>
-               <select  style={{marginTop:'10px',marginBottom:'10px',backgroundColor:"#b9929f",
-                  border:'none',color:'#6D184B'}}onChange={ContinetChangeHandler} value={continent}>
+               <select  style={{marginTop:'10px',marginBottom:'10px',
+                 }}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
                         <option key ={item.key} value={item.key}>{item.value}</option>
@@ -118,8 +118,8 @@ const UploadProductPage = (props) => {
                </select>
                <br>
                </br>
-               <Button className="confirmstyle button btnPush btnPurple"style={{backgroundColor:"#b9929f",
-                  border:'none',color:"#6D184B"}} htmlType='submit'  >
+               <Button className="confirmstyle button btnPush btnPurple"style={{
+                  border:'none'}} htmlType='submit'  >
                    확인
                </Button>
 

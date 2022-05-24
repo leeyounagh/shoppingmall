@@ -3,7 +3,7 @@ import './LandingMiddle.css';
 
 const Landingmiddle = () => {
     return (
-        <div style={{display:'flex',justifyContent:'center',marginTop:'100px',background:'#E2C2C6',
+        <div style={{display:'flex',justifyContent:'center',marginTop:'100px',
          paddingBottom:'50px'}}>
             <span>
             <img alt='테스트' src='./image/상품누끼.jpg' style={{width:'400px',height:'500px'}}></img>
