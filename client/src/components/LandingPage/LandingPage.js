@@ -35,7 +35,7 @@ const LandingPage = () => {
          
         }}
       >
-        more cheap,more unique,more hot<br/>
+        More Cheap,More Unique,More Hot<br/>
         매일이 즐거워지는 빈티지 패션플랫폼<br/>
         빈트 에이지
       </p>

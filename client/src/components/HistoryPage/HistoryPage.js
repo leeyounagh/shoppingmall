@@ -6,7 +6,7 @@ const HistoryPage = (props) => {
      
     return (
         <div className='history_text'>
-          <div  style={{background:'#E2C2C6',width:'100%',height:'800px',position:'fixed'}}>
+          <div  style={{width:'100%',height:'800px'}}>
          <div style={{ width: '80%', margin: '3rem auto' }}>
         <div style={{ textAlign: 'center',marginTop:'120px' }}>
             <h1>History</h1>

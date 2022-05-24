@@ -121,9 +121,9 @@ const MainPage = (props) => {
          setFilters(newFilters)
     }
     return (
-        <div className='Main_text'style={{background:'#E2C2C6',width:'100%',height:'1000px'}}>
+        <div className='Main_text'style={{width:'100%',height:'1000px'}}>
                <div style={{
-         width:'75%',margin:'3rem auto' ,background:'#E2C2C6'
+         width:'75%',margin:'3rem auto' ,
         }} className="MainPosition">
            <div style={{textAlign:'center'}}>
            <h2>당신을 위한 It Item</h2> 
