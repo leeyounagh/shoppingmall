@@ -72,16 +72,16 @@ function CartPage(props) {
 
     return (
         <div  className="UserCartPosition" style={{ width: '85%',marginLeft:'150px' }}>
-            <h1 style={{position:'absolute', top:'200px',left:'700px'}}>My Cart</h1>
+            <h1 style={{position:'absolute', top:'100px',left:'700px'}}>My Cart</h1>
          <div  >
 
 
          <div>
                 <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
             </div>
-             <div style={{position:'relative',left:'5%',marginTop:'50px',top:'100px'}}>
+             <div style={{position:'relative',left:'5%',marginTop:'50px',left:'0px',top:'70px'}}>
              {ShowTotal ?
-                <div style={{ marginTop: '3rem' }}>
+                <div style={{ marginTop: '3rem'}}>
                     <h2>Total Amount: ${Total}</h2>
                 </div>
                 : ShowSuccess ?
@@ -101,8 +101,7 @@ function CartPage(props) {
                 <Paypal
                     total={Total}
                     onSuccess={transactionSuccess}
-                />
-            }
+                />}
 
              </div>
          </div>

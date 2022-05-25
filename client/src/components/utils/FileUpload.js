@@ -56,7 +56,8 @@ const FileUpload = (props) => {
     top:'-150px'
 };
     return (
-        <div style ={{display:'flex', justifyContent:'space-between',marginTop:"10px"}}>
+        <div style ={{display:'flex', justifyContent:'space-between',
+        position:'absolute',top:'-50px'}}>
            <Dropzone className="dropzone" style={dropzoneStyle} onDrop={dropHandler}>
            {({getRootProps, getInputProps}) => (
           <section>

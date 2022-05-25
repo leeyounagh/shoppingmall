@@ -16,22 +16,22 @@ export default function(SpecificComponent ,option,adminRoute =null){
             const NaviGate =useNavigate()
             useEffect(()=>{
                 dispatch(auth()).then(response =>{
-                //    if(!response.payload.isAuth){
+                   if(!response.payload.isAuth){
                       
-                //        if(option){
-                //         console.log('들어갔니')
-                //         NaviGate('/login')
-                //        }
-                //        else {
-                //         //로그인 한 상태 
-                //         if (adminRoute && !response.payload.isAdmin) {
-                //             NaviGate('/')
-                //         } else {
-                //             if (option === false)
-                //             NaviGate('/')
-                //         }
-                //     }
-                //    }
+                       if(option){
+                        console.log('들어갔니')
+                        NaviGate('/login')
+                       }
+                       else {
+                        //로그인 한 상태 
+                        if (adminRoute && !response.payload.isAdmin) {
+                            NaviGate('/')
+                        } else {
+                            if (option === false)
+                            NaviGate('/')
+                        }
+                    }
+                   }
                 })
             },[])
   

@@ -78,10 +78,10 @@ const UploadProductPage = (props) => {
             })
     }
     return (
-        <div style={{background:'#EAC7CC'}}>
-         <div style={{width:'700px',height:'830px',border:'1px solid lightgray',position:'absolute',
-              left:'400px',marginTop:'100px',paddingTop:'0px', boxShadow:'2px 3px 5px 0px lightgray',marginBottom:'100px',
-              
+        <div style={{background:'pink'}}>
+         <div style={{width:'700px',height:'750px',border:'1px solid lightgray',position:'absolute',
+              left:'400px',top:'60px',paddingTop:'0px', boxShadow:'2px 3px 5px 0px lightgray',marginBottom:'100px',
+              borderRadius:'30px',marginTop:'10px'
              }}>
       
                    {/* <Title className="uploadTitle"level={2}>여행상품 업로드</Title> */}
@@ -89,31 +89,31 @@ const UploadProductPage = (props) => {
 
            <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto',}}
             onSubmitCapture={submitHandler}>
-                <div style={{position:'absolute',top:'-110px',left:'300px',fontSize:'25px',
+                <div style={{position:'absolute',top:'-140px',left:'300px',fontSize:'25px',
               }}>상품 업로드</div>
-              <div style={{position:'absolute',top:'90px',left:'140px',fontSize: '50px',color:'lightgray'
+              <div style={{position:'absolute',top:'30px',left:'140px',fontSize: '50px',color:'lightgray'
               }}> <PlusOutlined /></div> 
              <FileUpload style={{color:'#b9929f'}}  refreshFunction={updateImages}></FileUpload>
              
                <br>
                </br>
                
-               <Input style={{position:'absolute',left:'20px',top:'280px',marginLeft:'10px' ,width: '650px',marginTop:'20px',marginBottom:'10px',
+               <Input style={{position:'absolute',left:'10px',top:'200px',marginLeft:'10px' ,width: '670px',marginTop:'20px',marginBottom:'10px',
               }} className="Input_style"placeholder="상품명" onChange={titleChangeHandler} value={title} ></Input>
                
               
-               <TextArea style={{width:'700px',height:'80px',width: '650px',marginTop:'50px',
-               position:'absolute',left:'30px',top:'330px',placehoderColor:'black'
+               <TextArea style={{width:'700px',height:'80px',width: '670px',marginTop:'50px',
+               position:'absolute',left:'20px',top:'220px',placehoderColor:'black'
                }}onChange={descriptionChangeHandler} value={Descriptoion}  placeholder="상품설명...">  </TextArea>
                <br>
                </br>
-               <label style={{ position:'absolute',left:'30px',top:'470px'}}>가격($)</label>
+               <label style={{ position:'absolute',left:'22px',top:'355px'}}>가격($)</label>
                <Input  style={{marginLeft:'10px',width:'100px',
-             position:'absolute',left:'20px',top:'500px'} }type="number" onChange={priceChangeHandler} value={Price}></Input>
+             position:'absolute',left:'10px',top:'380px'} }type="number" onChange={priceChangeHandler} value={Price}></Input>
                <br>
                </br>
                <select  style={{marginTop:'10px',marginBottom:'10px',
-                 position:'absolute',left:'30px',top:'540px' }}onChange={ContinetChangeHandler} value={continent}>
+                 position:'absolute',left:'20px',top:'420px' }}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
                         <option key ={item.key} value={item.key}>{item.value}</option>
@@ -124,7 +124,8 @@ const UploadProductPage = (props) => {
                </select>
                <br>
                </br>
-               <Button style={{ position:'absolute',left:'330px',top:'560px' }} className=" button LG_btn Login_button" htmlType='submit'  >
+               <Button style={{ position:'absolute',left:'330px',top:'480px',
+              borderRadius:"10px" }} className=" button LG_btn Login_button" htmlType='submit'  >
                    확인
                </Button>
 

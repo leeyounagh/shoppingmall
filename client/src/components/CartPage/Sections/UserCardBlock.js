@@ -39,7 +39,7 @@ function UserCardBlock(props) {
 
     return (
         <div >
-            <table style={{position:'absolute', top:'200px',left:'0px',marginTop:'80px'}}>
+            <table style={{position:'relative', top:'100px',left:'0px',marginTop:'80px'}}>
                 <thead>
                     <tr>
                         <th>Product Image</th>
