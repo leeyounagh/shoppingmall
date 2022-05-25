@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {PlusOutlined} from '@ant-design/icons'
 import './Upload.css'
+// import '../LoginPage/Login.scss'
 const {Title} = Typography;
 const {TextArea} =Input;
 
@@ -77,37 +78,42 @@ const UploadProductPage = (props) => {
             })
     }
     return (
-           <div style={{width:'100%',height:'100%'
-         }}>
+        <div style={{background:'#EAC7CC'}}>
+         <div style={{width:'700px',height:'830px',border:'1px solid lightgray',position:'absolute',
+              left:'400px',marginTop:'100px',paddingTop:'0px', boxShadow:'2px 3px 5px 0px lightgray',marginBottom:'100px',
+              
+             }}>
       
                    {/* <Title className="uploadTitle"level={2}>여행상품 업로드</Title> */}
            
 
-           <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto'}}
+           <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto',}}
             onSubmitCapture={submitHandler}>
-                <div style={{position:'absolute',top:'-50px',left:'270px',fontSize:'25px',
+                <div style={{position:'absolute',top:'-110px',left:'300px',fontSize:'25px',
               }}>상품 업로드</div>
-              <div style={{position:'absolute',top:'80px',left:'120px',fontSize: '50px'
+              <div style={{position:'absolute',top:'90px',left:'140px',fontSize: '50px',color:'lightgray'
               }}> <PlusOutlined /></div> 
              <FileUpload style={{color:'#b9929f'}}  refreshFunction={updateImages}></FileUpload>
              
                <br>
                </br>
-               <label>이름</label>
-               <Input style={{marginLeft:'10px' ,width: '600px'}}onChange={titleChangeHandler} value={title} ></Input>
+               
+               <Input style={{position:'absolute',left:'20px',top:'280px',marginLeft:'10px' ,width: '650px',marginTop:'20px',marginBottom:'10px',
+              }} className="Input_style"placeholder="상품명" onChange={titleChangeHandler} value={title} ></Input>
+               
+              
+               <TextArea style={{width:'700px',height:'80px',width: '650px',marginTop:'50px',
+               position:'absolute',left:'30px',top:'330px',placehoderColor:'black'
+               }}onChange={descriptionChangeHandler} value={Descriptoion}  placeholder="상품설명...">  </TextArea>
                <br>
                </br>
-               <label style={{ marginTop:"20px"}}>설명</label>
-               <TextArea style={{width:'700px',height:'80px',
-               }}onChange={descriptionChangeHandler} value={Descriptoion}>  </TextArea>
-               <br>
-               </br>
-               <label >가격($)</label>
-               <Input  style={{marginLeft:'10px',width:'100px'} }type="number" onChange={priceChangeHandler} value={Price}></Input>
+               <label style={{ position:'absolute',left:'30px',top:'470px'}}>가격($)</label>
+               <Input  style={{marginLeft:'10px',width:'100px',
+             position:'absolute',left:'20px',top:'500px'} }type="number" onChange={priceChangeHandler} value={Price}></Input>
                <br>
                </br>
                <select  style={{marginTop:'10px',marginBottom:'10px',
-                 }}onChange={ContinetChangeHandler} value={continent}>
+                 position:'absolute',left:'30px',top:'540px' }}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
                         <option key ={item.key} value={item.key}>{item.value}</option>
@@ -118,13 +124,14 @@ const UploadProductPage = (props) => {
                </select>
                <br>
                </br>
-               <Button className="confirmstyle button btnPush btnPurple"style={{
-                  border:'none'}} htmlType='submit'  >
+               <Button style={{ position:'absolute',left:'330px',top:'560px' }} className=" button LG_btn Login_button" htmlType='submit'  >
                    확인
                </Button>
 
            </Form >
            </div>
+        </div>
+          
     );
 };
 

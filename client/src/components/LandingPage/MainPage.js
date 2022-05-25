@@ -7,6 +7,7 @@ import ImageSliider from '../utils/ImageSliider';
 import {continents,price} from './Sections/Datas'
 import RadioBox from './Sections/RadioBox';
 import SearchFeature from './Sections/SearchFeature';
+import '../LoginPage/Login.scss'
 
 
 const MainPage = (props) => {
@@ -61,6 +62,7 @@ const MainPage = (props) => {
          
            return (<Col lg={6} md={8} xs={24} key={index}>
             <Card 
+            style={{borderRadius:'10px'}}
              cover={<a href={`/product/${product._id}`}><ImageSliider images={product.images}></ImageSliider></a>}>
             
                <Meta
@@ -125,8 +127,8 @@ const MainPage = (props) => {
                <div style={{
          width:'75%',margin:'3rem auto' ,
         }} className="MainPosition">
-           <div style={{textAlign:'center'}}>
-           <h2>당신을 위한 It Item</h2> 
+           <div style={{textAlign:'center',marginBottom:'50px'}}>
+           <h2 className='It_text'>당신을 위한 It Item</h2> 
            </div>
           
            <Row gutter={[16,16]} className='Mainpanel-margin'>
@@ -151,7 +153,7 @@ const MainPage = (props) => {
            </Row> 
            
            {PostSize >= Limit&&    <div style={{display:'flex',justifyContent:'center'}}>
-              <button onClick={loadMoreHanlder}>더보기</button>
+              <button class="button LG_btn Login_button " onClick={loadMoreHanlder}>더보기</button>
            </div>}
        
            

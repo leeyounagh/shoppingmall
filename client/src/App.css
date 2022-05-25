@@ -8,12 +8,20 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'SuncheonB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .uploadTitle{
     position: relative;
     top:150px;
     textAlign:center;
     marginBottom:2rem;
-    font-family: 'Yeongdo-Rg';
+    font-family: 'SuncheonB';
+   
+
    
 }
 
@@ -22,8 +30,9 @@
     top:50px;
 }
 .detailPosition{
+    font-family: 'SuncheonB';
     position: relative;
-    top:150px;
+    top:50px;
 }
 /* .UserCartPosition{
     position: absolute;
@@ -48,7 +57,12 @@ body{
     font-family: 'Yeongdo-Rg';
 }
 .Main_text{
-    font-family: 'Yeongdo-Rg';
+    font-family: 'SuncheonB';
+}
+
+.It_text{
+    font-family: 'SuncheonB';
+    font-size: 30px;
 }
 /* input{
     outline: none;
@@ -101,7 +115,7 @@ body{
     font-size: 60px;
     color: #9c528b;
     right: 50%;
-    font-family: 'ChusaLove';
+    font-family: 'SuncheonB';
   }
   .desc3 {
     font-weight: bold;

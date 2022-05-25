@@ -1,0 +1,15 @@
+body{
+    background: #EAC7CC;
+}
+
+.Input_style{
+   
+  
+    color: pink;
+    border: none;
+    border-bottom: 1px solid rgba(lightgray, 0.5);
+    padding: 9px;
+    margin: 7px;
+
+
+}

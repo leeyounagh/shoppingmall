@@ -69,7 +69,7 @@ const LoginPage = (props) => {
                 <h2 class="title" style={{position:'absolute',top:'-110px',left:'240px'}}>vintage</h2>
       <img className="flower" style={{position:'absolute',top:'-30px',left:'230px'}}src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg"/>
       <p className="right_text"style={{position:'absolute',top:'90px',left:'230px',whiteSpace: 'nowrap'}} class="account">don't have an account?</p>
-      <button style={{position:'absolute',top:'130px',left:'250px',width:'100px'}} class="button LG_btn Login_button "
+      <button style={{position:'absolute',top:'130px',left:'250px',width:'100px'}} className="button LG_btn Login_button "
         onClick={NavigetRegister}>sign up</button>
     </div>
 

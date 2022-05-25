@@ -51,7 +51,9 @@ const FileUpload = (props) => {
   }
   const dropzoneStyle = {
    
-    border : "1px solid black"
+    border : "1px solid black",
+    position:'absolute',
+    top:'-150px'
 };
     return (
         <div style ={{display:'flex', justifyContent:'space-between',marginTop:"10px"}}>
