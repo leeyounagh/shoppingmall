@@ -2,6 +2,7 @@ import {useDispatch} from 'react-redux'
 import { registerUser } from '../../_actions/User_action';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../LoginPage/Login.scss' ;
 
 const RegisterPage = (props) => {
     const dispatch =useDispatch()
@@ -49,32 +50,54 @@ const RegisterPage = (props) => {
 
 
     return (
-        <div style={{
-            display: 'flex', justifyContent: 'center', alignItems: 'center'
-            , width: '100%', height: '100vh'
+        <div style={{width:'100%',background:'#CBC0D3',height:'800px',position:'fixed'}}>
+    <div  className='container' >
+  <div className='welcome' style={{
+            display: 'flex', justifyContent: 'center', alignItems: 'center', 
         }}>
-            <form style={{display:'flex',flexDirection:'column'}}
+            <form className="pinkbox "style={{display:'flex',
+            padding:'50px',flexDirection:'column',top:'-50px'}}
             onSubmit={onSubmitHandler}>
-                <label>Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler}/>
+        <h3 style={{color:'white',fontSize:'30px',whiteSpace: 'nowrap',
+          }}>Create Your Account</h3>
+		<p className='p_style' style={{color:'#87613d'}}>Just enter your email address<br/>
+            and your password for join.
+		</p>
+               
+                <input 
+                style={{border:'none',marginBottom:'5px',color:'white',fontSize:'13px',fontWeight:'700'}}
+                 className='w100 Login_input' type="email" value={Email} onChange={onEmailHandler} placeholder="Insert eMail"/>
                 
-                <label>Name</label>
-                <input type="text" value={Name} onChange={onNameHandler}/>
+             
+                <input style={{border:'none',marginBottom:'5px',fontSize:'13px',fontWeight:'700'}}
+                className='Login_input' type="text" value={Name} onChange={onNameHandler} placeholder="YourName"/>
 
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler}/>
+                
+                <input style={{border:'none',marginBottom:'5px',fontSize:'13px',fontWeight:'700'}  }
+                 className='Login_input' type="password" value={Password} onChange={onPasswordHandler} placeholder="Password"/>
 
-                <label>Confirm Password</label>
-                <input type="password" value={confirmPassword} onChange={onConfimPasswordHandler}/>
+               
+                <input  style={{border:'none',marginBottom:'5px',color:'white',fontSize:'13px',fontWeight:'700'}}
+                className='Login_input' type="password" value={confirmPassword} onChange={onConfimPasswordHandler} placeholder="confirm PW"/>
                 <br/>
-                <button type='submit'>
+                <button className='submit Login_button LG_btn' type='submit'>
                     회원가입
                 </button>
             </form>
+            <div class="rightbox">
+                <h2 class="title" style={{position:'absolute',top:'-200px',left:'100px'}}>vintage</h2>
+      <img className="flower" style={{position:'absolute',top:'-80px',left:'90px'}}src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg"/>
+      <p className="right_text"style={{position:'absolute',top:'50px',left:'70px',whiteSpace: 'nowrap'}} class="account">Welcome to Vintage World!</p>
+     
+    </div>
 
             
 
         </div>
+        </div>
+        </div>
+    
+      
     );
 };
 
