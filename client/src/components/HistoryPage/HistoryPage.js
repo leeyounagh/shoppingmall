@@ -3,6 +3,15 @@
 import React, { useEffect, useState } from 'react';
 
 const HistoryPage = (props) => {
+    
+    const numbertostring = (price) =>{
+     
+        let changednumber = price.toLocaleString('ko-KR');
+
+        return changednumber
+    
+}
+
      
     return (
         <div className='history_text'>
@@ -29,7 +38,7 @@ const HistoryPage = (props) => {
                     props.user.userData.history.map(item => (
                         <tr key={item.id}>
                             <td>{item[0].id}</td>
-                            <td>${item[0].price}</td>
+                            <td>${numbertostring(item[0].price)}</td>
                             <td>{item[0].quantity}</td>
                             <td>{item[0].dateOfPurchase}</td>
                         </tr>

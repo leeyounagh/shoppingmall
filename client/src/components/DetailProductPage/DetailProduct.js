@@ -19,6 +19,8 @@ const DetailProduct = (props) => {
             .catch(err => alert(err))
     }, [])
 
+
+
     return (
         <div className="detailPosition" style={{width:'100%',padding:'3rem 4rem'}}>
             <div style={{display:'flex',justifyContent:'center'}}>
@@ -31,7 +33,7 @@ const DetailProduct = (props) => {
                 </Col>
               
                 <Col lg={12} sm={24}>
-                <ProductInfo detail={Product}></ProductInfo>
+                <ProductInfo detail={Product} detailPrice ={Product.price}></ProductInfo>
                 </Col>
                
             </Row>

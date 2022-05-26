@@ -1,5 +1,6 @@
-import React from 'react'
-import "./UserCardBlock.css"
+import React from 'react';
+import "./UserCardBlock.css";
+import {Button} from 'antd';
 import Paypal from '../../utils/PayPal'
 
 function UserCardBlock(props) {
@@ -11,11 +12,18 @@ function UserCardBlock(props) {
         }
     }
 
+ const numbertostring = (price) =>{
+     
+         let changednumber = price.toLocaleString('ko-KR');
 
+         return changednumber
+     
+ }
 
 
     const renderItems = () => (
         props.products && props.products.map((product, index) => (
+        
             <tr key={index} style={{width:'500px'}}>
                 <td>
                     <img style={{ width: '70px' }} alt="product"
@@ -25,12 +33,13 @@ function UserCardBlock(props) {
                     {product.quantity} EA
                 </td>
                 <td>
-                    $ {product.price}
+             
+                 $ {numbertostring(product.price)}
                 </td>
                 <td>
-                    <button onClick={() => props.removeItem(product._id)}>
+                    <Button style={{borderRadius:'10px'}}onClick={() => props.removeItem(product._id)}>
                         Remove 
-                    </button>
+                    </Button>
                 </td>
             </tr>
         ))

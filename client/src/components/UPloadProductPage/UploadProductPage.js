@@ -77,11 +77,20 @@ const UploadProductPage = (props) => {
                 }
             })
     }
+
+    const numbertostring = (price) =>{
+     
+        let changednumber = price.toLocaleString('ko-KR');
+
+        return changednumber
+    
+}
+
     return (
         <div style={{background:'#CBC0D3',width:'100%',height:'1200px'}}>
             <div className='container'>
             <div className='update_backborder '>
-                <div style={{position:"absolute", left:"750px",top:"50px"}}>
+                <div style={{position:"absolute", left:"750px",top:"30px"}}>
                     <h2 className='Update_title'>update</h2>
                     <img className="flower" style={{position:'absolute',top:'80px',left:'-10px'}}src="https://i.pinimg.com/564x/97/2e/a9/972ea9cffd95c3a26bc444e5f0df85fb.jpg"/>
                     <p className="right_text"style={{position:'absolute',top:'230px',left:'-10px',whiteSpace: 'nowrap',
@@ -121,7 +130,7 @@ const UploadProductPage = (props) => {
                </br>
                <div style={{border:"none"}}>
                <select className="select" style={{marginTop:'10px',marginBottom:'10px',
-                 position:'absolute',left:'20px',top:'330px',border:'none',borderRadius:"2px" }}onChange={ContinetChangeHandler} value={continent}>
+                 position:'absolute',left:'30px',top:'330px',border:'none',borderRadius:"2px" }}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
                         <option key ={item.key} value={item.key}>{item.value}</option>

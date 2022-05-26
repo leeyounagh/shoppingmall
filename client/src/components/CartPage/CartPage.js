@@ -68,7 +68,13 @@ function CartPage(props) {
             })
     }
 
+    const numbertostring = (price) =>{
+     
+        let changednumber = price.toLocaleString('ko-KR');
 
+        return changednumber
+    
+}
 
     return (
         <div  className="UserCartPosition" style={{ width: '85%',marginLeft:'150px' }}>
@@ -82,7 +88,7 @@ function CartPage(props) {
              <div style={{position:'relative',left:'5%',marginTop:'50px',left:'0px',top:'70px'}}>
              {ShowTotal ?
                 <div style={{ marginTop: '3rem'}}>
-                    <h2>Total Amount: ${Total}</h2>
+                    <h2>Total Amount: ${numbertostring(Total)}</h2>
                 </div>
                 : ShowSuccess ?
                     <Result

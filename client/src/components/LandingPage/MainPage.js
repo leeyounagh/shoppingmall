@@ -57,6 +57,13 @@ const MainPage = (props) => {
         getProducts(body)
         setSkip(skip)
     }
+    const numbertostring = (price) =>{
+     
+        let changednumber = price.toLocaleString('ko-KR');
+
+        return changednumber
+    
+}
 
      const renderCards =Products.map((product,index)=>{
          
@@ -68,7 +75,7 @@ const MainPage = (props) => {
                <Meta
                style={{color:'black'}}
                 title={product.title}
-                description={`가격:${product.price}`}></Meta>
+                description={`가격:${numbertostring(Number(product.price))}`}></Meta>
            </Card>
            </Col>
           )

@@ -12,10 +12,19 @@ const ProductInfo = (props) => {
 
          dispatch(addtoCart(props.detail._id))
     }
+    const numbertostring = (price) =>{
+     
+        let changednumber = price.toLocaleString('ko-KR');
+
+        return changednumber
+    
+}
+
+  
     return (
         <div>
               <Descriptions title="Product Info" bordered>
-    <Descriptions.Item label="Price">{props.detail.price}</Descriptions.Item>
+    <Descriptions.Item label="Price">{numbertostring(Number(props.detailPrice))}</Descriptions.Item>
     <Descriptions.Item label="Sold">{props.detail.sold}</Descriptions.Item>
     <Descriptions.Item label="View">{props.detail.views}</Descriptions.Item>
     <Descriptions.Item label="Description">{props.detail.description}</Descriptions.Item>
