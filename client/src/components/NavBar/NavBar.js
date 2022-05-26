@@ -1,11 +1,15 @@
-import React, { Fragment,useState } from 'react';
+import React, { Fragment,useEffect,useState } from 'react';
 import LeftMenu from './Section/LeftMenu';
 import RightMenu from './Section/RightMenu';
 import { Drawer, Button, Icon } from 'antd';
 import './Section/NavBar.css'
-
+import { useParams } from 'react-router-dom';
 const NavBar = () => {
     const [visible, setVisible] = useState(false)
+    let { path } = useParams();
+    useEffect(()=>{
+<RightMenu></RightMenu>
+    },[])
     const showDrawer = () => {
         setVisible(true)
       };
@@ -13,6 +17,8 @@ const NavBar = () => {
       const onClose = () => {
         setVisible(false)
       };
+
+      // console.log("주소확인",{ path })
     return (
         <nav className="menu " style={{ position: 'fixed', top:'0px',zIndex:300, width: '100%' }}>
    

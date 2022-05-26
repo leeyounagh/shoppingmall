@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {PlusOutlined} from '@ant-design/icons'
 import './Upload.css'
-// import '../LoginPage/Login.scss'
+ import '../LoginPage/Login.scss'
 const {Title} = Typography;
 const {TextArea} =Input;
 
@@ -78,42 +78,50 @@ const UploadProductPage = (props) => {
             })
     }
     return (
-        <div style={{background:'pink'}}>
-         <div style={{width:'700px',height:'750px',border:'1px solid lightgray',position:'absolute',
-              left:'400px',top:'60px',paddingTop:'0px', boxShadow:'2px 3px 5px 0px lightgray',marginBottom:'100px',
-              borderRadius:'30px',marginTop:'10px'
-             }}>
+        <div style={{background:'#CBC0D3',width:'100%',height:'1200px'}}>
+            <div className='container'>
+            <div className='update_backborder '>
+                <div style={{position:"absolute", left:"750px",top:"50px"}}>
+                    <h2 className='Update_title'>update</h2>
+                    <img className="flower" style={{position:'absolute',top:'80px',left:'-10px'}}src="https://i.pinimg.com/564x/97/2e/a9/972ea9cffd95c3a26bc444e5f0df85fb.jpg"/>
+                    <p className="right_text"style={{position:'absolute',top:'230px',left:'-10px',whiteSpace: 'nowrap',
+                 color:"#CBC0D3"}} class="account">show your pretty item!</p>
+                </div>
+         <div style={{width:'550px',height:'630px',border:'1px solid lightgray',position:'absolute',
+              left:'50px',top:'-70px',paddingTop:'0px', boxShadow:'2px 3px 5px 0px lightgray',marginBottom:'100px',
+              borderRadius:'10px',marginTop:'10px',zIndex:10,background:'#EAC7CC',zIndex:"50"
+             ,paddingBottom:'10px'}}>
       
-                   {/* <Title className="uploadTitle"level={2}>여행상품 업로드</Title> */}
-           
-
-           <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto',}}
+                
+                 <Form  className='uploadTitle' style={{maxWidth:'700px',margin:'2rem auto',}}
             onSubmitCapture={submitHandler}>
-                <div style={{position:'absolute',top:'-140px',left:'300px',fontSize:'25px',
-              }}>상품 업로드</div>
-              <div style={{position:'absolute',top:'30px',left:'140px',fontSize: '50px',color:'lightgray'
+                {/* <div style={{position:'absolute',top:'-140px',left:'250px',fontSize:'25px',
+              }}>상품 업로드</div> */}
+              <div style={{position:'absolute',top:'-70px',left:'120px',fontSize: '50px',color:'white'
               }}> <PlusOutlined /></div> 
+              
              <FileUpload style={{color:'#b9929f'}}  refreshFunction={updateImages}></FileUpload>
              
                <br>
                </br>
                
-               <Input style={{position:'absolute',left:'10px',top:'200px',marginLeft:'10px' ,width: '670px',marginTop:'20px',marginBottom:'10px',
-              }} className="Input_style"placeholder="상품명" onChange={titleChangeHandler} value={title} ></Input>
+               <input style={{position:'absolute',left:'10px',top:'100px',marginLeft:'10px' ,width: '500px',marginTop:'20px',marginBottom:'10px',
+              }} className="Login_input"placeholder="상품명" onChange={titleChangeHandler} value={title} ></input>
                
               
-               <TextArea style={{width:'700px',height:'80px',width: '670px',marginTop:'50px',
-               position:'absolute',left:'20px',top:'220px',placehoderColor:'black'
-               }}onChange={descriptionChangeHandler} value={Descriptoion}  placeholder="상품설명...">  </TextArea>
+               <textarea className="Login_input" style={{width:'700px',height:'80px',width: '500px',marginTop:'50px',
+               position:'absolute',left:'10px',top:'120px',placehoderColor:'black'
+               }}onChange={descriptionChangeHandler} value={Descriptoion}  placeholder="상품설명...">  </textarea>
                <br>
                </br>
-               <label style={{ position:'absolute',left:'22px',top:'355px'}}>가격($)</label>
-               <Input  style={{marginLeft:'10px',width:'100px',
-             position:'absolute',left:'10px',top:'380px'} }type="number" onChange={priceChangeHandler} value={Price}></Input>
+               <label style={{ position:'absolute',left:'29px',top:'260px',color:"white"}}>가격($)</label>
+               <input className="Login_input" style={{marginLeft:'10px',width:'500px',
+             position:'absolute',left:'12px',top:'275px'} }type="number" onChange={priceChangeHandler} value={Price}></input>
                <br>
                </br>
-               <select  style={{marginTop:'10px',marginBottom:'10px',
-                 position:'absolute',left:'20px',top:'420px' }}onChange={ContinetChangeHandler} value={continent}>
+               <div style={{border:"none"}}>
+               <select className="select" style={{marginTop:'10px',marginBottom:'10px',
+                 position:'absolute',left:'20px',top:'330px',border:'none',borderRadius:"2px" }}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
                         <option key ={item.key} value={item.key}>{item.value}</option>
@@ -122,15 +130,24 @@ const UploadProductPage = (props) => {
                    })}
                
                </select>
+               </div>
+              
                <br>
                </br>
-               <Button style={{ position:'absolute',left:'330px',top:'480px',
-              borderRadius:"10px" }} className=" button LG_btn Login_button" htmlType='submit'  >
+               <button style={{ position:'absolute',left:'240px',top:'350px',
+              borderRadius:"10px",height:'40px' }} className=" button LG_btn Login_button" htmlType='submit'  >
                    확인
-               </Button>
+               </button>
 
            </Form >
+                 </div>
+           
+
+         
            </div>
+          
+            </div>
+            
         </div>
           
     );

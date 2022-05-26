@@ -22,9 +22,19 @@ import styles from './custom.less';
 
 function App({titlecolor}) {
 
-  const {pathname} =useLocation()
+  const {pathname} =useLocation();
+  const location = useLocation();
+  useEffect(()=>{
+   console.log(location)
+  },[location])
+
+  useEffect(()=>{
+    <NavBar></NavBar>
+  },[])
+  
   useEffect(()=>{
     scrollToTop()
+   
   },[pathname])
 
   const scrollToTop = (event) => {

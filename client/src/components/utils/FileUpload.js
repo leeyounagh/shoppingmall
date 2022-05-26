@@ -52,16 +52,16 @@ const FileUpload = (props) => {
   const dropzoneStyle = {
    
     border : "1px solid black",
-    position:'absolute',
+    position:'relative',
     top:'-150px'
 };
     return (
         <div style ={{display:'flex', justifyContent:'space-between',
-        position:'absolute',top:'-50px'}}>
+        position:'relative',top:'-150px',left:'0px'}}>
            <Dropzone className="dropzone" style={dropzoneStyle} onDrop={dropHandler}>
            {({getRootProps, getInputProps}) => (
           <section>
-          <div style={{width:300,height:240,border:'1px solid lightgray'}}{...getRootProps()}>
+          <div style={{width:250,height:240,border:'1px solid white'}}{...getRootProps()}>
         <input {...getInputProps()} />
        
         {/* <p>Drag 'n' drop some files here, or click to select files</p> */}
@@ -69,11 +69,11 @@ const FileUpload = (props) => {
         </section>
           )}
         </Dropzone>
-        <div style={{display:'flex',width:'350px',height:'240px',
-         overflowX:'scroll'}}> 
+        <div style={{display:'flex',width:'250px',height:'240px',
+         overflowX:'scroll',marginLeft:"5px",zIndex:'300'}}> 
           {Images.map((image,index)=>{
            return( <div key ={index} onClick={()=>deleteHandler(image)}>
-               <img style={{ minWidth: '300px', width: '300px', height: '240px' }}
+               <img style={{ minWidth: '300px', width: '250px', height: '240px'}}
            src={`http://localhost:5000/${image}`}
         /> 
          

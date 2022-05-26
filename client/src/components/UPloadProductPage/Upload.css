@@ -13,3 +13,46 @@ body{
 
 
 }
+
+.update_backborder{
+    background: white;
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 150px;
+    left: -200px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+    z-index: 100;
+}
+
+select::-ms-expand { 
+	display: none;
+}
+.select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 70px;
+  color:#EAC7CC;
+
+}
+
+.select option {
+    background: #EAC7CC;
+    color: white;
+    padding: 3px 0;
+  }
+
+  .Update_title {
+    font-family: 'Open Sans', sans-serif;
+    color: #8E9AAF;
+    font-size: 30px;
+    line-height: 1.1em;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 20%;
+    z-index: 10;
+  }

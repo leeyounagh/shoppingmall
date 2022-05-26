@@ -1,15 +1,16 @@
 import {useDispatch} from 'react-redux'
 import { loginUser } from '../../_actions/User_action';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss' ;
-
+import RightMenu from '../NavBar/Section/RightMenu';
 
 const LoginPage = (props) => {
    const dispatch =useDispatch()
    const NaviGate = useNavigate()
     const [Email,setEmail] =useState("")
     const [Password,setPassword] =useState("")
+
   
     const onEmailHandler = (event) =>{
         setEmail(event.currentTarget.value)
@@ -24,11 +25,12 @@ const LoginPage = (props) => {
             email: Email,
             password: Password
         }
-
+  
         dispatch(loginUser(body))
             .then(response => {
                 if (response.payload.loginSuccess) {
-                    NaviGate('/')
+                    NaviGate('/');
+                   
                 } else {
                     alert('Error˝')
                 }
@@ -36,6 +38,7 @@ const LoginPage = (props) => {
 
 
     }
+  
     const NavigetRegister = () =>{
         return(
             NaviGate('/register')

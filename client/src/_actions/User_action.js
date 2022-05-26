@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useEffect } from 'react';
 import {
     LOGIN_USER,
     REGISTER_USER,
@@ -10,9 +11,12 @@ import {
     ON_SUCCESS_BUY
 } from './types';
 
-export function loginUser(dataToSubmit) {
 
-    const request = axios.post('/api/users/login', dataToSubmit)
+
+export async function loginUser(dataToSubmit) {
+  
+
+    const request = await axios.post('/api/users/login', dataToSubmit)
         .then(response => response.data)
 
     return {
@@ -44,15 +48,15 @@ export function auth() {
 }
 
 
-// export function logoutUser(){
-//    const request= axios.get('/api/users/logout')
-//     .then(response => response.data);
+export async function logoutUser(){
+   const request= await axios.get('/api/users/logout')
+    .then(response => response.data);
 
-//     return {
-//         type: LOGOUT_USER,
-//         payload: request
-//     } 
-// }
+    return {
+        type: LOGOUT_USER,
+        payload: request
+    } 
+}
 
 export function addtoCart(id){
     let body= {
