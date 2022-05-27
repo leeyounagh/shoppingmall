@@ -10,7 +10,9 @@ const LoginPage = (props) => {
    const NaviGate = useNavigate()
     const [Email,setEmail] =useState("")
     const [Password,setPassword] =useState("")
+ 
 
+  
   
     const onEmailHandler = (event) =>{
         setEmail(event.currentTarget.value)
@@ -30,6 +32,7 @@ const LoginPage = (props) => {
             .then(response => {
                 if (response.payload.loginSuccess) {
                     NaviGate('/');
+                    <RightMenu loginSuccess={response.payload.loginSuccess}></RightMenu>
                    
                 } else {
                     alert('Error˝')

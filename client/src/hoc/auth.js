@@ -19,7 +19,7 @@ export default function(SpecificComponent ,option,adminRoute =null){
                    if(!response.payload.isAuth){
                       
                        if(option){
-                        console.log('들어갔니')
+                      
                         NaviGate('/login')
                        }
                        else {

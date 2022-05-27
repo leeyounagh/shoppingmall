@@ -43,6 +43,7 @@ select::-ms-expand {
     background: #EAC7CC;
     color: white;
     padding: 3px 0;
+    text-align: center;
   }
 
   .Update_title {

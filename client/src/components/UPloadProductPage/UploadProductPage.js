@@ -78,13 +78,7 @@ const UploadProductPage = (props) => {
             })
     }
 
-    const numbertostring = (price) =>{
-     
-        let changednumber = price.toLocaleString('ko-KR');
 
-        return changednumber
-    
-}
 
     return (
         <div style={{background:'#CBC0D3',width:'100%',height:'1200px'}}>
@@ -115,25 +109,28 @@ const UploadProductPage = (props) => {
                </br>
                
                <input style={{position:'absolute',left:'10px',top:'100px',marginLeft:'10px' ,width: '500px',marginTop:'20px',marginBottom:'10px',
-              }} className="Login_input"placeholder="상품명" onChange={titleChangeHandler} value={title} ></input>
+              }} className="update_input"placeholder="상품명" onChange={titleChangeHandler} value={title} ></input>
                
               
-               <textarea className="Login_input" style={{width:'700px',height:'80px',width: '500px',marginTop:'50px',
-               position:'absolute',left:'10px',top:'120px',placehoderColor:'black'
+               <textarea className="update_input" style={{width:'700px',height:'80px',width: '500px',marginTop:'50px',
+               position:'absolute',left:'14px',top:'120px',placehoderColor:'black'
                }}onChange={descriptionChangeHandler} value={Descriptoion}  placeholder="상품설명...">  </textarea>
                <br>
                </br>
-               <label style={{ position:'absolute',left:'29px',top:'260px',color:"white"}}>가격($)</label>
-               <input className="Login_input" style={{marginLeft:'10px',width:'500px',
+               <label style={{ position:'absolute',left:'25px',top:'260px',color:"white"}}>가격($)</label>
+               <input className="update_input" style={{marginLeft:'10px',width:'500px',
              position:'absolute',left:'12px',top:'275px'} }type="number" onChange={priceChangeHandler} value={Price}></input>
                <br>
                </br>
                <div style={{border:"none"}}>
+               <caption style={{position:'absolute',left:'25px',top:'320px',display: 'inline-block',
+                color:'white'}}>상품 카테고리 :</caption>
                <select className="select" style={{marginTop:'10px',marginBottom:'10px',
-                 position:'absolute',left:'30px',top:'330px',border:'none',borderRadius:"2px" }}onChange={ContinetChangeHandler} value={continent}>
+                 position:'absolute',left:'125px',top:'320px',border:'none',borderRadius:"2px",
+                  textAlignLast:"center" }}onChange={ContinetChangeHandler} value={continent}>
                    {Continents.map((item)=>{
                      return(
-                        <option key ={item.key} value={item.key}>{item.value}</option>
+                        <option style={{textAlignLast:"center"}}key ={item.key} value={item.key}>{item.value}</option>
                          )  
                     
                    })}

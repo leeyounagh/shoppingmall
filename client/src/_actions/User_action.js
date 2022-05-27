@@ -13,9 +13,9 @@ import {
 
 
 
-export async function loginUser(dataToSubmit) {
+ export async function loginUser(dataToSubmit) {
   
-
+  
     const request = await axios.post('/api/users/login', dataToSubmit)
         .then(response => response.data)
 
@@ -62,7 +62,7 @@ export function addtoCart(id){
     let body= {
         productId:id
     }
- 
+
     const request= axios.post('/api/users/addToCart',body)
     .then(response => response.data);
 

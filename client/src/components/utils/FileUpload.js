@@ -61,7 +61,8 @@ const FileUpload = (props) => {
            <Dropzone className="dropzone" style={dropzoneStyle} onDrop={dropHandler}>
            {({getRootProps, getInputProps}) => (
           <section>
-          <div style={{width:250,height:240,border:'1px solid white'}}{...getRootProps()}>
+          <div style={{width:250,height:240,border:'1px solid white',
+          borderRadius:'10px'}}{...getRootProps()}>
         <input {...getInputProps()} />
        
         {/* <p>Drag 'n' drop some files here, or click to select files</p> */}
@@ -70,7 +71,7 @@ const FileUpload = (props) => {
           )}
         </Dropzone>
         <div style={{display:'flex',width:'250px',height:'240px',
-         overflowX:'scroll',marginLeft:"5px",zIndex:'300'}}> 
+         overflowX:'auto',marginLeft:"5px",zIndex:'300'}}> 
           {Images.map((image,index)=>{
            return( <div key ={index} onClick={()=>deleteHandler(image)}>
                <img style={{ minWidth: '300px', width: '250px', height: '240px'}}

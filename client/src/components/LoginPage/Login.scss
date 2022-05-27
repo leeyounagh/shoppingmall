@@ -1,6 +1,6 @@
 $gray: #8E9AAF;
 $lavender: #CBC0D3;
-$pale: #EAC7CC;
+$pale: #f8bbd0;
 $white: #f6f6f6;
 
 $pink: darken($pale, 20%);
@@ -80,6 +80,32 @@ h1 {
   margin: 7px;
   &::placeholder {
     color: rgba($white, 1);
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    
+  }
+  &:focus {
+    color: $pink;
+    outline: none;
+    border-bottom: 1.2px solid rgba($pink, 0.7);
+    font-size: 1em;
+    transition: .8s all ease;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+.update_input {
+  background: 80 #f8bbd0;
+  width: 65%;
+  color: $pink;
+  border: none;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba($white, 0.5);
+  padding: 9px;
+  margin: 7px;
+  &::placeholder {
+    color: rgba($pale, 1);
     letter-spacing: 2px;
     font-size: 1.3em;
     
