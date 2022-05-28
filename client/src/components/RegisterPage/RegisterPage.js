@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux'
 import { registerUser } from '../../_actions/User_action';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LoginPage/Login.scss' ;
 
@@ -47,7 +47,9 @@ const RegisterPage = (props) => {
             })
     }
 
+   useEffect(()=>{
 
+   },[dispatch])
 
     return (
         <div style={{width:'100%',background:'#CBC0D3',height:'800px',position:'fixed'}}>

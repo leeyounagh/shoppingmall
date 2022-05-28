@@ -36,7 +36,7 @@ const NavBar = () => {
         >
           {/* <Icon type="align-right" /> */}
         </Button>
-        <Drawer
+        {/* <Drawer
           title="Basic Drawer"
           placement="right"
           className="menu_drawer"
@@ -46,7 +46,7 @@ const NavBar = () => {
         >
           <LeftMenu mode="inline" />
           <RightMenu mode="inline" />
-        </Drawer>
+        </Drawer> */}
       </div>
     </nav>
     );

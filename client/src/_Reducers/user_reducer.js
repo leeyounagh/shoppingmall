@@ -15,7 +15,7 @@ export default function (state = {}, action) {
     return produce(state, (draftState) => {
     switch (action.type) {
         case LOGIN_USER:
-            return { ...state, loginSuccess: action.payload }
+            return  { ...state, loginSuccess: action.payload }
            
           case  REGISTER_USER:
               return {...state,register:action.payload}

@@ -49,31 +49,31 @@ app.post('/api/users/login', (req, res) => {
    
     // console.log('ping')
     //요청된 이메일을 데이터베이스에서 있는지 찾는다.
-    User.findOne({ email: req.body.email }, (err, user) => {
+    User.findOne({ email: req.body.email }, async (err, user) => {
   
       // console.log('user', user)
       if (!user) {
-        return res.json({
+        return await res.json({
           loginSuccess: false,
           message: "제공된 이메일에 해당하는 유저가 없습니다."
         })
       }
   
       //요청된 이메일이 데이터 베이스에 있다면 비밀번호가 맞는 비밀번호 인지 확인.
-      user.comparePassword(req.body.password, (err, isMatch) => {
+      user.comparePassword(req.body.password, async(err, isMatch) => {
         // console.log('err',err)
   
         // console.log('isMatch',isMatch)
   
         if (!isMatch)
-          return res.json({ loginSuccess: false, message: "비밀번호가 틀렸습니다." })
+          return await res.json({ loginSuccess: false, message: "비밀번호가 틀렸습니다." })
   
         //비밀번호 까지 맞다면 토큰을 생성하기.
-        user.generateToken((err, user) => {
-          if (err) return res.status(400).send(err);
+        user.generateToken(async(err, user) => {
+          if (err) return await res.status(400).send(err);
   
           // 토큰을 저장한다.  어디에 ?  쿠키 , 로컳스토리지 
-          res.cookie("x_auth", user.token)
+         await res.cookie("x_auth", user.token)
             .status(200)
             .json({ loginSuccess: true, userId: user._id })
         })
@@ -85,7 +85,7 @@ app.post('/api/users/login', (req, res) => {
     //여기 까지 미들웨어를 통과해 왔다는 얘기는  Authentication 이 True 라는 말.
     res.status(200).json({
       _id: req.user._id,
-      isAdmin: req.user.role === 0 ? false : true,
+      isAdmin: req.user.role === 1? false : true,
       isAuth: true,
       email: req.user.email,
       name: req.user.name,
@@ -100,9 +100,9 @@ app.post('/api/users/login', (req, res) => {
   app.get('/api/users/logout',auth,(req,res)=>{
       User.findOneAndUpdate({_id:req.user._id},
        {token:""},
-       (err,user)=>{
-           if(err) return res.json({success:false,err})
-           return res.status(200).send({success:true})
+      async (err,user)=>{
+           if(err) return await res.json({success:false,err})
+           return   res.status(200).send({success:true})
        } )
   })
 
@@ -123,8 +123,8 @@ app.post('/api/users/login', (req, res) => {
            User.findOneAndUpdate({_id:req.user._id ,"cart.id":req.body.productId}),
            {$inc : {"cart.$.quantity":1}},
            {new:true},
-           (err,userInfo)=>{
-             if(err) return res.status(200).json({success:false,err})
+          async (err,userInfo)=>{
+             if(err) return await res.status(200).json({success:false,err})
              res.status(200).send(userInfo.cart)
            }
         }

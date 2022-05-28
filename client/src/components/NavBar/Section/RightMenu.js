@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { Badge, Avatar,Menu  } from 'antd';
-import {  useSelector } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import {ShoppingCartOutlined} from '@ant-design/icons'
 import MainPage from '../../LandingPage/MainPage'
@@ -12,14 +12,17 @@ import axios from 'axios'
 
 const RightMenu = (props) => {
   const NaviGate = useNavigate()
+  const dispatch = useDispatch()
     const user =useSelector(state =>  state.user)
-    //  useEffect(()=>{
-    //   logoutHandler()
-    //  },[])
+    
      const logoutHandler = () => {
-      axios.get('api/users/logout').then(response => {
-        if (response.status === 200) {
+
+     
+      axios.get('api/users/logout').then(async(response) => {
+        if (await response.status === 200) {
           NaviGate("/login");
+          // dispatch({type:'LOGOUT_USER'})
+          test()
         } else {
           alert('Log Out Failed')
         }
@@ -27,12 +30,11 @@ const RightMenu = (props) => {
    
       };
     
-        // console.log(user.userData,user.userData.isAuth)
-      // console.log("주소확인",{ path })
-      if (user.userData && !user.userData.isAuth) {
-        
-        return (
-          <Menu mode={props.mode}>
+
+       const test = () =>{
+         return (
+           <div>
+               <Menu mode={props.mode}>
           <Menu.Item key="mail">
             <a href="/login">Signin</a>
           </Menu.Item>
@@ -44,7 +46,34 @@ const RightMenu = (props) => {
           </Menu.Item>
         </Menu>
          
+           </div>
+         )
+       }
+
+      //  useEffect(()=>{
+      //   return ()=>{
+      //     logoutHandler()}
+      //  },[logoutHandler])
+        // console.log(user.userData,user.userData.isAuth)
+      // console.log("주소확인",{ path })
+      if (user.userData && !user.userData.isAuth) {
+        
+        return (
+        //   <Menu mode={props.mode}>
+        //   <Menu.Item key="mail">
+        //     <a href="/login">Signin</a>
+        //   </Menu.Item>
+        //   {/* <Menu.Item key="app">
+        //     <a href="/register">Signup</a>
+        //   </Menu.Item> */}
+        //   <Menu.Item key="main">
+        //     <a href="/main">Products</a>
+        //   </Menu.Item>
+        // </Menu>
          
+         <div>
+           {test()}
+         </div>
           
         )
       } else {

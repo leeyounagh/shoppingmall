@@ -87,8 +87,8 @@ const UploadProductPage = (props) => {
                 <div style={{position:"absolute", left:"750px",top:"30px"}}>
                     <h2 className='Update_title'>update</h2>
                     <img className="flower" style={{position:'absolute',top:'80px',left:'-10px'}}src="https://i.pinimg.com/564x/97/2e/a9/972ea9cffd95c3a26bc444e5f0df85fb.jpg"/>
-                    <p className="right_text"style={{position:'absolute',top:'230px',left:'-10px',whiteSpace: 'nowrap',
-                 color:"#CBC0D3"}} class="account">show your pretty item!</p>
+                    <p className="right_text account"style={{position:'absolute',top:'230px',left:'-10px',whiteSpace: 'nowrap',
+                 color:"#CBC0D3"}} >show your pretty item!</p>
                 </div>
          <div style={{width:'550px',height:'630px',border:'1px solid lightgray',position:'absolute',
               left:'50px',top:'-70px',paddingTop:'0px', boxShadow:'2px 3px 5px 0px lightgray',marginBottom:'100px',
@@ -123,8 +123,11 @@ const UploadProductPage = (props) => {
                <br>
                </br>
                <div style={{border:"none"}}>
-               <caption style={{position:'absolute',left:'25px',top:'320px',display: 'inline-block',
+                   <div>
+                   <caption style={{position:'absolute',left:'25px',top:'320px',display: 'inline-block',
                 color:'white'}}>상품 카테고리 :</caption>
+                   </div>
+               
                <select className="select" style={{marginTop:'10px',marginBottom:'10px',
                  position:'absolute',left:'125px',top:'320px',border:'none',borderRadius:"2px",
                   textAlignLast:"center" }}onChange={ContinetChangeHandler} value={continent}>
@@ -141,7 +144,7 @@ const UploadProductPage = (props) => {
                <br>
                </br>
                <button style={{ position:'absolute',left:'240px',top:'350px',
-              borderRadius:"10px",height:'40px' }} className=" button LG_btn Login_button" htmlType='submit'  >
+              borderRadius:"10px",height:'40px' }} className=" button LG_btn Login_button" type='submit'  >
                    확인
                </button>
 

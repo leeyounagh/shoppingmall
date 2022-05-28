@@ -41,6 +41,10 @@ const LoginPage = (props) => {
 
 
     }
+
+    // useEffect(()=>{
+    //     dispatch()
+    // },[dispatch])
   
     const NavigetRegister = () =>{
         return(

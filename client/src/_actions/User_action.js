@@ -13,16 +13,16 @@ import {
 
 
 
- export async function loginUser(dataToSubmit) {
+ export  function loginUser(dataToSubmit) {
   
   
-    const request = await axios.post('/api/users/login', dataToSubmit)
-        .then(response => response.data)
+    const request =  axios.post('/api/users/login', dataToSubmit)
+        .then(async(response) =>  response.data)
 
     return {
         type: LOGIN_USER,
         payload: request,
-        Auth:true
+        
 
     }
 }
@@ -38,10 +38,10 @@ export function registerUser(dataToSubmit) {
     }  
 
 }
-export async function auth() {
+export  function auth() {
 
-    const request = await axios.get('/api/users/auth')
-        .then(response =>response.data)
+    const request =  axios.get('/api/users/auth')
+        .then((response) => response.data)
     return {
         type: AUTH_USER,
         payload: request
@@ -49,9 +49,9 @@ export async function auth() {
 }
 
 
-export async function logoutUser(){
-   const request= await axios.get('/api/users/logout')
-    .then(response => response.data);
+export  function logoutUser(){
+   const request=  axios.get('/api/users/logout')
+    .then((response) =>  response.data);
 
     return {
         type: LOGOUT_USER,

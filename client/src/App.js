@@ -28,9 +28,9 @@ function App({titlecolor}) {
    console.log(location)
   },[location])
 
-  useEffect(()=>{
-    <NavBar></NavBar>
-  },[])
+  // useEffect(()=>{
+  //   <NavBar></NavBar>
+  // },[App])
   
   useEffect(()=>{
     scrollToTop()
@@ -51,7 +51,7 @@ function App({titlecolor}) {
      <Routes>
  
        <Route exact path ="/" element={auth(LandingPage,null)}/>
-       <Route exact path ="/landingmiddle" element={auth(Landingmiddle,null)}/>
+       {/* <Route exact path ="/landingmiddle" element={auth(Landingmiddle,null)}/> */}
        <Route exact path ="/main" element={auth(MainPage,null)}/>
        
        
