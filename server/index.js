@@ -162,7 +162,7 @@ app.post('/api/users/login', (req, res) => {
 app.get('/api/users/removeFromCart',auth,(req,res)=>{
   //먼저 cart안에 내가 지우려고한 상품을 지워주기
   User.findOneAndUpdate(
-    { _id: req.user._id },
+    { _id: req.user._id },//$pull 상품지우기
     {
         "$pull":
             { "cart": { "id": req.query.id } }

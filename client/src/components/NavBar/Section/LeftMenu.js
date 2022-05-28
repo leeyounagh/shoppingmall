@@ -1,15 +1,25 @@
-import React from 'react';
-import { Menu } from 'antd';
+import React from "react";
+
+import { Menu } from "antd";
+
+
+
+const items = [
+
+  { label: <a href="/">Home</a>, key: "mail" },
+
+
+
+];
+
+
 
 function LeftMenu(props) {
-  return (
-    <Menu mode={props.mode}>
-    <Menu.Item key="mail">
-      <a href="/">Home</a>
-    </Menu.Item>
-   
-  </Menu>
-  )
+
+  return <Menu mode="horizontal" items={items} />;
+
 }
 
-export default LeftMenu
+
+
+export default LeftMenu;

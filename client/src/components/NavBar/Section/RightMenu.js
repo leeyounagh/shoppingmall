@@ -36,9 +36,9 @@ const RightMenu = (props) => {
           <Menu.Item key="mail">
             <a href="/login">Signin</a>
           </Menu.Item>
-          <Menu.Item key="app">
+          {/* <Menu.Item key="app">
             <a href="/register">Signup</a>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key="main">
             <a href="/main">Products</a>
           </Menu.Item>

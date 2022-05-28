@@ -69,6 +69,7 @@ const MainPage = (props) => {
          
            return (<Col lg={6} md={8} xs={24} key={index}>
             <Card 
+            className='scale'
             style={{borderRadius:'10px'}}
              cover={<a href={`/product/${product._id}`}><ImageSliider images={product.images}></ImageSliider></a>}>
             

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {  useNavigate } from "react-router-dom";
@@ -15,10 +14,10 @@ export default function(SpecificComponent ,option,adminRoute =null){
             const dispatch = useDispatch();
             const NaviGate =useNavigate()
             useEffect(()=>{
-                dispatch(auth()).then(response =>{
-                   if(!response.payload.isAuth){
+                dispatch(auth()).then(async(response) =>{
+                   if(await !response.payload.isAuth){
                       
-                       if(option){
+                       if(option===true){
                       
                         NaviGate('/login')
                        }
@@ -26,8 +25,7 @@ export default function(SpecificComponent ,option,adminRoute =null){
                         //로그인 한 상태 
                         if (adminRoute && !response.payload.isAdmin) {
                             NaviGate('/')
-                        } else {
-                            if (option === false)
+                        } else if (option === false){
                             NaviGate('/')
                         }
                     }
