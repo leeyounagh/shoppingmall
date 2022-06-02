@@ -162,4 +162,4 @@ const UploadProductPage = (props) => {
     );
 };
 
-export default UploadProductPage;
+export default React.memo(UploadProductPage);

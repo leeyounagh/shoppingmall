@@ -7,9 +7,9 @@ import { useParams } from 'react-router-dom';
 const NavBar = () => {
     const [visible, setVisible] = useState(false)
     let { path } = useParams();
-    useEffect(()=>{
-<RightMenu></RightMenu>
-    },[])
+//     useEffect(()=>{
+// <RightMenu></RightMenu>
+//     },[])
     const showDrawer = () => {
         setVisible(true)
       };
@@ -52,4 +52,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default React.memo(NavBar);

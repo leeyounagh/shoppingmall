@@ -65,6 +65,7 @@ To {
     color: black;
     font-family: 'Nanum Pen Script', cursive;
 font-family: 'Water Brush', cursive;
+
  
 }
 .title_fade{
@@ -86,3 +87,32 @@ html {
     scroll-behavior: smooth;
   }
   
+
+  @media (max-width: 400px) {
+    #main  {
+      display: none;
+    }
+    #main2{
+        display: none;
+    }
+    #main3{
+        display: none;
+    }
+    #main_title{
+        display: none;
+          
+      }
+  }
+
+  
+  @media (max-width: 400px) {
+ 
+    #aoi{
+        width: 200px;
+        height: 300px;
+        position:'absolute';
+        top:'100px';
+        left:'0px'
+    }
+    
+  }
