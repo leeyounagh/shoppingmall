@@ -78,7 +78,7 @@ function CartPage(props) {
 
     return (
         <div  className="UserCartPosition" style={{ width: '85%',marginLeft:'150px' }}>
-            <h1 style={{position:'absolute', top:'100px',left:'700px'}}>My Cart</h1>
+            <h1 style={{position:'relative', top:'100px',left:'0px'}}>My Cart</h1>
          <div  >
 
 

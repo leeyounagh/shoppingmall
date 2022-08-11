@@ -28,9 +28,7 @@ function App({titlecolor}) {
    console.log(location)
   },[location])
 
-  // useEffect(()=>{
-  //   <NavBar></NavBar>
-  // },[App])
+
   
   useEffect(()=>{
     scrollToTop()

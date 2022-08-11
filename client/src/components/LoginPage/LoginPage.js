@@ -90,9 +90,11 @@ const LoginPage = (props) => {
             
 
         </div>
+        
             </div>
 
-        </div>
+                </div>
+       
         </div>
        
       

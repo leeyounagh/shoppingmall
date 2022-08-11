@@ -48,7 +48,7 @@
     margin-top: 30px;
 }
 body{
-    background:#9F814F
+    overflow-x: hidden;
 }
 
 .history_text{
