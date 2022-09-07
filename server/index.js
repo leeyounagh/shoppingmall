@@ -23,9 +23,10 @@ app.use(express.static('uploads'));
 
 
 
-mongoose.connect(config.mongoURI
+mongoose.connect('mongodb+srv://admin:qwer1234@cluster0.l9bb7.mongodb.net/travelapp?retryWrites=true&w=majority'
 ).then(()=>console.log('mongoDb connected'))
 .catch(err=>console.log(err))
+
 
 app.get('/',(req,res)=>res.send('Hello world!'))
 
